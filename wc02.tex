@@ -4,6 +4,8 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
 
 \title{Weekly Challenge 02: Deterministic Finite Automata (DFA)}
 \author{CS 212 Nature of Computation\\Habib University}
@@ -17,7 +19,20 @@
 \begin{document}
 \maketitle
 
+\rowcolors{2}{white}{white}
+	\begin{tabularx}{\textwidth}{|X|X|}
+
+		\hline
+    Name:& Areesha Amir  \\ \hline 
+    ID: & aa07613 \\ \hline 
+    Section: & L4 \\ \hline 
+		
+   
+	\end{tabularx}
+
 \begin{questions}
+
+
   
 \titledquestion{The Complement Language}
 
@@ -36,9 +51,39 @@
   where $L'$ is the set-complement of $L$.
 
   %%% Uncomment below to enter your solution.
-  % \begin{solution}
+  \begin{solution}
+
+    We are given that:
+    \begin{itemize}
+      \item $M_1$ is a finite automata whose language is $L_1$.
+      \item M2 is a finite automata whose language is $L_2$.
+      \item The accepting states of $M_2$ are the complement of accepting states of $M_1$. 
+    \end{itemize}
+
+    Let's take intersection of $L_1$ and $L_2$:
+    \\ 
+    $L_1 \cap L_2 = \{x | x \in L_1$ and $x \in L_2 \}$ \\
+    \\Since the accepted strings of $M_1$ make up the language $L_1$ whereas the
+     accepting strings of $M_2$ make up the language $L_2$. From the third given point, we can
+      conclude that an accepted string in $L_1$ will not be in $L_2$ and vice versa, thus: \\
+    $L_1 \cap L_2 = \phi $ \\ \\
+    Lets consider a string $x$ which is accepted by $M_1$. 
+   \\ We can mathematically represent this as:
+   
+    $L_1$ = \{$x | x \in \{0,1\}$ and $x \notin L_2 $\} \\
+
+    Now, lets consider a string $x$ that is accepted by the complement of $L_2$: \\
+    $L_2'$ = \{$x | x \in \{0,1\}$ and $x \notin L_2 $\} \\ 
+
+    We can rewrite this as:\\
+    $L_1$ = $L_2'$
+    \\
+    \\ Hence proved that the above claim is true.
     
-  % \end{solution}
+
+   
+    
+  \end{solution}
   
 \end{questions}
 \end{document}
